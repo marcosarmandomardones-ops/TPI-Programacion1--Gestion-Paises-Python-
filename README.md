@@ -117,6 +117,6 @@ El archivo CSV debe tener el siguiente formato:
 
 ## Instrucciones de Ejecución
 
-### 1️⃣ Clonar el repositorio:
+### 1. Clonar el repositorio:
 
 
