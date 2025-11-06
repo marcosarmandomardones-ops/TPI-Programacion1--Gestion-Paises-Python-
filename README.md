@@ -15,14 +15,7 @@ Integrantes del grupo: Pablo Mazuquin / Marcos Mardones
 Este proyecto corresponde al Trabajo Práctico Integrador (TPI) de la asignatura Programación I.
 El objetivo es desarrollar un sistema en Python capaz de gestionar información de países utilizando:
 
-- Listas
-- Diccionarios
-- Funciones
-- Modularización
-- Lectura desde archivos CSV
-- Filtros
-- Ordenamientos
-- Estadísticas básicas
+Listas - Diccionarios - Funciones - Modularización - Lectura desde archivos CSV - Filtros - Ordenamientos - stadísticas básicas
 
 El sistema se ejecuta por consola e incorpora un menú interactivo que permite realizar búsquedas, filtrados, actualizaciones y obtener indicadores sobre el conjunto de países cargados.
 
@@ -71,19 +64,29 @@ Cantidad de países por continente
 - Estructura del Proyecto
 
 El proyecto se encuentra modularizado siguiendo buenas prácticas:
+
+
 src/
-│── main.py              
-│── archivos.py          
-│── consultas.py         
-│── filtros.py           
-│── ordenamientos.py     
-│── estadisticas.py      
-│── validaciones.py      
+│── main.py 
+
+│── archivos.py 
+
+│── consultas.py  
+
+│── filtros.py  
+
+│── ordenamientos.py 
+
+│── estadisticas.py 
+
+│── validaciones.py 
+
 │
 └── data/
      └── paises.csv      
 
 - Dataset Utilizado
+  
 El archivo CSV debe tener el siguiente formato:
 
 
