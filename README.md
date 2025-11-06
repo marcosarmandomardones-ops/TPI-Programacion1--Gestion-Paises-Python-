@@ -5,9 +5,13 @@ Tecnicatura Universitaria en Programación – Universidad Tecnológica Nacional
 - Información General:
 
 Materia: Programación I
+
 Año: 2025
+
 Profesor Titular: Sebastián Bruselario
+
 Docente Tutor: Virginia Cimino
+
 Integrantes del grupo: Pablo Mazuquin / Marcos Mardones
 
 - Descripción del Proyecto:
@@ -83,6 +87,7 @@ src/
 
 │
 └── data/
+
      └── paises.csv      
 
 - Dataset Utilizado
