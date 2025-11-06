@@ -1,8 +1,8 @@
 # Proyecto Integrador Programación 1 - 2025
-"Gestión de Datos de Países en Python: (filtros, ordenamientos y estadísticas)"
+# "Gestión de Datos de Países en Python: (filtros, ordenamientos y estadísticas)"
 Tecnicatura Universitaria en Programación – Universidad Tecnológica Nacional
 
-# Información General:
+- Información General:
 
 - Materia: Programación I
 - Año: 2025
@@ -10,7 +10,7 @@ Tecnicatura Universitaria en Programación – Universidad Tecnológica Nacional
 - Docente Tutor: Virginia Cimino
 - Integrantes del grupo: Pablo Mazuquin / Marcos Mardones
 
-# Descripción del Proyecto:
+- Descripción del Proyecto:
 
 Este proyecto corresponde al Trabajo Práctico Integrador (TPI) de la asignatura Programación I.
 El objetivo es desarrollar un sistema en Python capaz de gestionar información de países utilizando:
@@ -26,20 +26,20 @@ El objetivo es desarrollar un sistema en Python capaz de gestionar información 
 
 El sistema se ejecuta por consola e incorpora un menú interactivo que permite realizar búsquedas, filtrados, actualizaciones y obtener indicadores sobre el conjunto de países cargados.
 
-# Objetivos del Trabajo
+- Objetivos del Trabajo
 
-- Aplicar los conceptos fundamentales de Programación 1.
-- Leer y procesar datos desde un archivo CSV.
-- Organizar el proyecto mediante módulos independientes.
-- Implementar funciones robustas con validaciones y manejo de errores.
-- Generar estadísticas relevantes a partir del dataset.
-- Fortalecer el trabajo colaborativo utilizando GitHub.
+Aplicar los conceptos fundamentales de Programación 1.
+Leer y procesar datos desde un archivo CSV.
+Organizar el proyecto mediante módulos independientes.
+Implementar funciones robustas con validaciones y manejo de errores.
+Generar estadísticas relevantes a partir del dataset.
+Fortalecer el trabajo colaborativo utilizando GitHub.
 
-# Características del Sistema
+- Características del Sistema
 
 El programa permite:
 
-- Gestión de países
+Gestión de países
 
 Agregar un nuevo país (con validación de campos)
 Actualizar población o superficie de un país existente
@@ -68,22 +68,22 @@ Promedio de población
 Promedio de superficie
 Cantidad de países por continente
 
-# Estructura del Proyecto
+- Estructura del Proyecto
 
 El proyecto se encuentra modularizado siguiendo buenas prácticas:
 src/
-│── main.py              # Menú principal y flujo general del programa
-│── archivos.py          # Lectura del CSV, validaciones de formato
-│── consultas.py         # Búsquedas de países
-│── filtros.py           # Filtrado por criterios
-│── ordenamientos.py     # Ordenamientos por nombre, población, superficie
-│── estadisticas.py      # Cálculo de indicadores
-│── validaciones.py      # Validación de entradas del usuario
+│── main.py              
+│── archivos.py          
+│── consultas.py         
+│── filtros.py           
+│── ordenamientos.py     
+│── estadisticas.py      
+│── validaciones.py      
 │
 └── data/
-     └── paises.csv      # Dataset base del proyecto
+     └── paises.csv      
 
-# Dataset Utilizado
+- Dataset Utilizado
 El archivo CSV debe tener el siguiente formato:
 
 
