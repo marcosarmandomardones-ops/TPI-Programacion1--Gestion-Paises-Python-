@@ -78,14 +78,22 @@ El proyecto se encuentra modularizado siguiendo buenas prácticas:
 
 src/
 │── main.py # Menú principal y flujo general del programa
+
 │── archivos.py # Lectura del CSV y validaciones
+
 │── consultas.py # Búsquedas de países
+
 │── filtros.py # Filtrado por criterios
+
 │── ordenamientos.py # Ordenamientos por nombre, población y superficie
+
 │── estadisticas.py # Cálculo de indicadores
+
 │── validaciones.py # Validación de entradas del usuario
+
 │
 └── data/
+
 └── paises.csv # Dataset base del proyecto
 
 ---
