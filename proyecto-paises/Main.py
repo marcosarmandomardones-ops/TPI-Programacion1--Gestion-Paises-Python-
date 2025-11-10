@@ -49,6 +49,10 @@ def ingresar_pais():
 
         nombre = nombre.lower()
         
+        if not validar_texto(nombre):
+            print("Error: El nombre no puede ser un número. Intente de nuevo.")
+            continue
+
         poblacion = input("Ingrese su poblacion: ").strip()
         #Comprueba que sea un numero valido
         if not validar_numero(poblacion):
@@ -58,6 +62,7 @@ def ingresar_pais():
         poblacion = int(poblacion)
 
         superficie = input("Ingrese su superficie: ").strip()
+
 
         if not validar_numero(superficie):
             print("Error al ingresar la superficie")
@@ -69,6 +74,10 @@ def ingresar_pais():
     
         if continente == "":
             print("Error al ingresar el continente")
+            continue
+
+        if not validar_texto(continente):
+            print("Error: El nombre no puede ser un número. Intente de nuevo.")
             continue
 
         continente = continente.lower()
@@ -127,16 +136,16 @@ def buscar_paises():
     if len(lista_resultado) == 0:
         print("No se encontraron resultados en la búsqueda")
         return
-
-    # mostrar resultados de la busqueda 
-    print("\nResultados encontrados:")
-    print("---------------------------")
-    for pais in lista_resultado:
-        print(f"Nombre: {pais['nombre'].capitalize()}")
-        print(f"Población: {pais['poblacion']}")
-        print(f"Superficie: {pais['superficie']}")
-        print(f"Continente: {pais['continente'].capitalize()}")
+    else:
+        # mostrar resultados de la busqueda 
+        print("\nResultados encontrados:")
         print("---------------------------")
+        for pais in lista_resultado:
+            print(f"Nombre: {pais['nombre'].capitalize()}")
+            print(f"Población: {pais['poblacion']}")
+            print(f"Superficie: {pais['superficie']}")
+            print(f"Continente: {pais['continente'].capitalize()}")
+            print("---------------------------")
 
 
 
@@ -172,6 +181,10 @@ def filtrar_paises():
 
         if not validar_numero(poblacion):
             print("Error al ingresar un número no válido")
+            return
+
+        if not validar_texto(continente):
+            print("Error: El nombre no puede ser un número. Intente de nuevo.")
             return
 
         poblacion = int(poblacion)
@@ -225,7 +238,12 @@ def ordenar_paises():
     print("4. Volver al menú")
 
     opcion = input("Seleccione una opción: ").strip()
-    if opcion not in ["1", "2", "3"]:
+    if opcion not in ["1", "2", "3", "4"]:
+        print("Error: Opcion invalida")
+        return
+    
+    if opcion == "4":
+        print("Redirigiendo al Menu de Opciones.")
         return
     
     lista = obtener_datos()
@@ -323,6 +341,26 @@ def validar_numero(numero):
         return True
     
     return False
+
+
+#FUNC PARA VALIDAR TEXTO
+def validar_texto(texto):
+    """
+    Valida que el texto no esté vacío y que no sea un número.
+    Devuelve True si es un texto válido, False si está vacío o es un número.
+    """
+    texto_limpio = texto.strip() # Limpia espacios al inicio y final
+    
+    # 1. Revisa si el texto quedó vacío
+    if not texto_limpio:
+        return False
+        
+    # 2. Revisa si el texto limpio son SOLO números
+    if texto_limpio.isdigit():
+        return False
+        
+    # 3. Si pasó las dos pruebas, es un texto válido
+    return True
 
 
 def mostrar_menu():
