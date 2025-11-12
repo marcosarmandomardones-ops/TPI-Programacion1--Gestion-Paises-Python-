@@ -26,19 +26,19 @@ NOMBRE_ARCHIVO = "paises.csv"
 def obtener_datos():
     
     lista_paises = []
-        #Crea el archivo si no existe
+        # Crea el archivo si no existe
     if not os.path.exists(NOMBRE_ARCHIVO):
         with open(NOMBRE_ARCHIVO, "w", newline="", encoding="utf_8") as archivo:
             escritor = csv.DictWriter(archivo, fieldnames=["nombre", "poblacion", "superficie", "continente"])
-            #Escribe la primera fila del CSV, o sea, los encabezados
+            # Escribe la primera fila del CSV, o sea, los encabezados
             escritor.writeheader()
 
             return lista_paises
     
     with open(NOMBRE_ARCHIVO, newline="", encoding="utf_8") as archivo:
-        #Lee el formato csv interpreta las columnas
+        # Lee el formato csv interpreta las columnas
         lector = csv.DictReader(archivo)
-        #Recorre y crea un diccionario y agregar cada diccionario a la lista
+        # Recorre y crea un diccionario y agregar cada diccionario a la lista
         for fila in lector:
             lista_paises.append({"nombre": fila["nombre"], "poblacion": int(fila["poblacion"]), "superficie": int(fila["superficie"]), "continente": fila["continente"] })
 
@@ -176,7 +176,6 @@ def actualizar_datos():
     lista_paises[indice_pais]["poblacion"] = nueva_poblacion
     lista_paises[indice_pais]["superficie"] = nueva_superficie
 
-
     #Guardar la lista COMPLETA en el CSV
     guardar_lista_completa(lista_paises) 
     print(f"\n¡Datos de {pais_encontrado['nombre'].capitalize()} actualizados exitosamente!")
@@ -205,7 +204,7 @@ def buscar_paises():
         print("No se encontraron resultados en la búsqueda")
         return
     else:
-        # mostrar resultados de la busqueda 
+        # Mostrar resultados de la búsqueda
         print("\nResultados encontrados:")
         print("---------------------------")
         for pais in lista_resultado:
@@ -216,8 +215,6 @@ def buscar_paises():
             print("---------------------------")
 
 
-
-
 # FUNCION PARA FILTRAR PAISES (4)
 def filtrar_paises():
     print("\n------ Filtrar Países ------")
@@ -225,7 +222,7 @@ def filtrar_paises():
     print("2. Filtrar por población mínima")
     print("3. Filtrar por superficie mínima")
     print("4. Volver al menú")
-
+    # Selección de opción
     opcion_filtro = input("Seleccione una opción: ").strip()
 
     lista_paises = obtener_datos()
@@ -284,7 +281,7 @@ def filtrar_paises():
 
     print("\nPaíses filtrados:")
     print("---------------------------")
-
+    # Mostrar países filtados
     for pais in lista_filtrada:
         print(f"Nombre: {pais['nombre'].capitalize()}")
         print(f"Población: {pais['poblacion']}")
@@ -339,6 +336,7 @@ def ordenar_paises():
     print("\nPaíses ordenados:")
     print("---------------------------")
 
+    # Mostrar países ordenados
     for pais in lista:
         print(f"Nombre: {pais['nombre'].capitalize()}")
         print(f"Población: {pais['poblacion']}")
@@ -356,15 +354,15 @@ def mostrar_estadisticas():
         print("No encontramos países registrados")
         return
     
-
+    # Inicializamos variables
     total_paises = len(lista)
     total_poblacion = 0
     total_superficie = 0
 
     mayor_poblacion = lista[0]
     mayor_superficie = lista[0]
-
-    for pais in lista:   # recorremos la lista para calcular mayores y totales
+    # Recorremos la lista para calcular mayores y totales
+    for pais in lista:   
         total_poblacion += pais["poblacion"]
         total_superficie += pais["superficie"]
 
@@ -373,7 +371,8 @@ def mostrar_estadisticas():
 
         if pais["superficie"] > mayor_superficie["superficie"]:
             mayor_superficie = pais
-    # calculo de promedios
+
+    #  Calculas promedios
     promedio_poblacion = total_poblacion // total_paises
     promedio_superficie = total_superficie // total_paises
 
@@ -386,18 +385,17 @@ def mostrar_estadisticas():
     print(f"País con mayor superficie: {mayor_superficie['nombre'].capitalize()} ({mayor_superficie['superficie']} km²)")
 
 
-# FUNCION PARA VERIFICAR SI EL PAIS YA EXISTE
+# VERIFICAR SI EL PAIS YA EXISTE
 def existe_dato(dato):
     lista_paises = obtener_datos()
 
     for paises in lista_paises:
         if paises["nombre"].lower() == dato.strip().lower():
-            return True
-        
+            return True  
     return False
 
 
-    # FUNCION PARA VALIDAR NUMEROS
+    # VALIDAR NUMEROS
 def validar_numero(numero):
     numero = numero.strip()
     if numero.isdigit():
@@ -406,8 +404,7 @@ def validar_numero(numero):
     
     return False
 
-
-# FUNCION PARA VALIDAR TEXTOS
+# VALIDAR TEXTOS
 def validar_texto(texto):
     """
     Valida que el texto no esté vacío y que no sea un número.
@@ -429,7 +426,7 @@ def mostrar_menu():
     while True:
         print("\n")
         print("******** MENU INFO PAISES ********")
-        print("1 agregar un país")
+        print("1 Agregar un país")
         print("2 Actualizar datos de un país")
         print("3 Buscar un país")
         print("4 Filtrar países")
@@ -438,8 +435,8 @@ def mostrar_menu():
         print("7 Salir")
         print("*"*16)
 
+        # Leer opción del usuario
         opcion_menu = input("Ingrese una opcion: ").strip()
-
         match opcion_menu:
             case "1":
                 ingresar_pais()
